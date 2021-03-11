@@ -17,12 +17,15 @@ export interface GroupInfo {
 }
 
 const fetchGroupsData = async () => {
-  const response: ServerResponse = await axios({
-    method: 'get',
-    url: 'https://www.timetable.sbmt.by/groups/',
-  });
-
-  return response.data;
+  try {
+    const response: ServerResponse = await axios({
+      method: 'get',
+      url: 'https://www.timetable.sbmt.by/groups/',
+    });
+    return response.data;
+  } catch (error) {
+    throw new Error(error);
+  }
 };
 
 export default fetchGroupsData;
