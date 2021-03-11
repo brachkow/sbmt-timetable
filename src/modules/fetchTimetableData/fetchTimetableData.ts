@@ -1,4 +1,5 @@
 import axios from 'axios';
+import formatNumber from '../../utils/formatNumber/formatNumber';
 
 interface ServerResponse {
   data: string;
@@ -10,12 +11,17 @@ const fetchTimetableData = async (
   month: number,
   year: number,
 ) => {
-  const response: ServerResponse = await axios({
-    method: 'get',
-    url: `https://www.timetable.sbmt.by/group/${group}/${day}-${month}-${year}/`,
-  });
-
-  return response.data;
+  try {
+    const response: ServerResponse = await axios({
+      method: 'get',
+      url: `https://www.timetable.sbmt.by/group/${group}/${formatNumber(
+        day,
+      )}-${formatNumber(month)}-${formatNumber(year)}/`,
+    });
+    return response.data;
+  } catch (error) {
+    throw new Error(error);
+  }
 };
 
 export default fetchTimetableData;
