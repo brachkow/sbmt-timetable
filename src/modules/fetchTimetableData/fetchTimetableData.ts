@@ -16,7 +16,7 @@ const fetchTimetableData = async (
       method: 'get',
       url: `https://www.timetable.sbmt.by/group/${group}/${formatNumber(
         day,
-      )}-${formatNumber(month)}-${formatNumber(year)}/`,
+      )}-${formatNumber(month)}-20${formatNumber(year)}/`,
     });
     return response.data;
   } catch (error) {

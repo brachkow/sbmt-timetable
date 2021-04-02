@@ -43,7 +43,7 @@ const getTimetableData = (xml: string) => {
       const time = dayjs(
         `${date} ${cells[0].textContent}`,
         'DD.MM.YYYY hh:mm',
-      ).unix();
+      ).unix() * 1000;
       const subgroup =
         cells[1].textContent !== null ? cells[1].textContent : 'No group';
       const subject =
