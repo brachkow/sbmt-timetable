@@ -53,6 +53,7 @@ const main = async () => {
         start: new Date(task.time),
         end: new Date(task.time + 4800000),
         summary: task.subject,
+        description: task.teacher,
         location: task.address,
       });
     });
