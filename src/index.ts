@@ -58,7 +58,7 @@ const main = async () => {
       });
     });
     calendarsArray.push(calendar.toString());
-    fs.writeFileSync(`dist/${group.name}.ics`, calendar.toString());
+    fs.writeFileSync(`dist/group/${group.name}.ics`, calendar.toString());
   });
   return calendarsArray;
 };

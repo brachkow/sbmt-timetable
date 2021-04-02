@@ -1,7 +1,7 @@
 {
   "name": "sbmt-timetable",
   "scripts": {
-    "start": "mkdir dist/group; ts-node ./src/index.ts",
+    "start": "mkdir -p dist/group; ts-node ./src/index.ts",
     "test": "jest"
   },
   "husky": {
