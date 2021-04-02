@@ -3,6 +3,7 @@ import getTimetableData from '../../getTimetableData/__mocks__/getTimetableData'
 
 test('Expect dates extracted from mock to be correct', () => {
   const expectedResult = [
+    '31.08.20',
     '07.09.20',
     '14.09.20',
     '21.09.20',
@@ -33,6 +34,8 @@ test('Expect dates extracted from mock to be correct', () => {
     '15.03.21',
     '22.03.21',
     '29.03.21',
+    '05.04.21',
+    '12.04.21',
   ];
   const result = getDatesData(getTimetableData());
   expect(result).toStrictEqual(expectedResult);
