@@ -15,7 +15,7 @@ import dayjs from 'dayjs';
 const main = async () => {
   const calendarsArray: Array<String> = [];
   const groups = composeGroupsData(await fetchGroupsData());
-  [{ name: '952', id: '952' }].forEach(async (group) => {
+  [{ name: '951', id: '951' },{ name: '952', id: '952' }].forEach(async (group) => {
     // groups.forEach(async (group: Group) => {
     const dates = getDatesData(await fetchTimetableData(group.id, 99, 99, 99));
     const calendar = ical({
